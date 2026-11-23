@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca</title>
+</head>
+<body>
+<h1 th:text="${titulo}"></h1>
+<nav>
+    <a th:href="@{/livros/cadastroLivro}">Cadastro de Livros</a>
+    <br><br>
+    <a th:href="@{/livros/cadastroAutor}">Cadastro de Autores</a>
+    <br><br>
+    <a th:href="@{/livros/listaCadastroLivro}">Livros cadastrados</a>
+    <br><br>
+    <a th:href="@{/livros/listaCadastroAutor}">Autores cadastrados</a>
+    <br><br>
+    <a th:href="@{/livros/cadastroCategoria}">Cadastrar Categoria</a>
+    <br><br>
+    <a th:href="@{/livros/listaCadastroCategoria}">Listar Categorias</a>
+</nav>
+</body>
+</html>

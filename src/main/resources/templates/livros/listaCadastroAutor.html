@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Autores cadastrados</title>
+</head>
+<body>
+
+<h1>Autores Cadastrados</h1>
+
+<ul>
+    <li th:each="autor : ${autores}">
+
+        <form th:action="@{/livros/editarAutor}" method="post">
+
+            <input type="hidden" name="id" th:value="${autor.id}">
+
+            <label>Nome:</label>
+            <input type="text" name="autor" th:value="${autor.autor}" required>
+
+            <label>Nacionalidade:</label>
+            <input type="text" name="nacionalidade"
+                   th:value="${autor.nacionalidade}" required>
+
+            <label>Quantidade de livros:</label>
+            <input type="number" name="quantidade"
+                   th:value="${autor.quantidade}" min="0" required>
+
+            <button type="submit">Salvar alterações</button>
+        </form>
+
+        <form th:action="@{/livros/excluirAutor}" method="post">
+            <input type="hidden" name="id" th:value="${autor.id}">
+            <button type="submit">Excluir autor</button>
+        </form>
+
+        <hr>
+
+    </li>
+</ul>
+
+<button type="button" onclick="window.location.href='/livros'">
+    Voltar ao início
+</button>
+
+</body>
+</html>
